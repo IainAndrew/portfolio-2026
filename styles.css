@@ -203,8 +203,12 @@ a {
   text-underline-offset: 3px;
 }
 
+a {
+  transition: opacity 120ms ease-in-out;
+}
+
 a:hover {
-  text-decoration-style: wavy;
+  opacity: 0.6;
 }
 
 a:focus-visible,
@@ -281,11 +285,11 @@ button:focus-visible {
   letter-spacing: 0.04em;
   text-transform: uppercase;
   text-decoration: none;
-  transition: transform 100ms ease-in-out;
+  transition: opacity 120ms ease-in-out;
 }
 
 .main-nav a:hover {
-  transform: scale(1.05);
+  opacity: 0.6;
 }
 
 .main-nav a::before {
@@ -313,12 +317,11 @@ button:focus-visible {
 
 .version a {
   text-decoration: none;
+  transition: opacity 120ms ease-in-out;
 }
 
 .version a:hover {
-  text-decoration: underline wavy;
-  text-decoration-thickness: 1px;
-  text-underline-offset: 3px;
+  opacity: 0.6;
 }
 
 /* Mode toggle */
@@ -351,11 +354,11 @@ button:focus-visible {
 .toggle-icon {
   width: 1.6rem;
   height: 1.6rem;
-  transition: transform 100ms ease-in-out;
+  transition: opacity 120ms ease-in-out;
 }
 
-.toggle-icon:hover {
-  transform: scale(1.15) rotate(5deg);
+.toggle-button:hover .toggle-icon {
+  opacity: 0.6;
 }
 
 .toggle-icon svg {
@@ -487,9 +490,7 @@ hr {
 }
 
 .links a:hover {
-  text-decoration: underline wavy;
-  text-decoration-thickness: 1px;
-  text-underline-offset: 3px;
+  opacity: 0.6;
 }
 
 /* Footer */
@@ -521,9 +522,7 @@ hr {
 }
 
 .footer-links a:hover {
-  text-decoration: underline wavy;
-  text-decoration-thickness: 1px;
-  text-underline-offset: 3px;
+  opacity: 0.6;
 }
 
 /* Print and PDF, from /cv/ */
