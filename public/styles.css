@@ -283,10 +283,10 @@ button:focus-visible {
   content: "";
   flex: 1;
   order: 2;
-  background-image: radial-gradient(circle, var(--fg) 20%, transparent 21%);
-  background-size: 0.6em 0.6em;
+  background-image: radial-gradient(circle, var(--fg) 0.055em, transparent calc(0.055em + 0.5px));
+  background-size: 2.2em 1em;
   background-repeat: space no-repeat;
-  background-position: 0 80%;
+  background-position: 0 50%;
 }
 
 .main-nav a::after {
