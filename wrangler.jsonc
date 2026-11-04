@@ -6,7 +6,7 @@
   // The site lives at iainandrew.com only; no second URL on workers.dev.
   "workers_dev": false,
   "assets": {
-    // Only public/ is published. notes/, scripts/ and config stay out of the site.
+    // Only public/ is published. scripts/ and config stay out of the site.
     "directory": "./public",
     // /about/index.html is served at /about/ and /about redirects to /about/.
     "html_handling": "auto-trailing-slash",
