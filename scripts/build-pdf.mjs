@@ -27,6 +27,11 @@ const browser = await launch();
 try {
   const page = await browser.newPage();
   await page.goto(input, { waitUntil: "load" });
+  await page.evaluate(() => {
+    document.querySelectorAll("details").forEach((d) => (d.open = true));
+    document.querySelectorAll(".reveal").forEach((el) => el.classList.add("is-visible"));
+  });
+  await page.evaluate(() => document.fonts.ready);
   await page.emulateMedia({ media: "print", colorScheme: "light" });
   await page.pdf({
     path: output,

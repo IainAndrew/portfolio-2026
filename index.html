@@ -6,132 +6,183 @@
   <title>Iain Andrew — Senior Software Engineer</title>
   <meta name="description" content="Senior software engineer in Dublin, most recently at Canva (Pexels). Twelve years building web products: frontend by trade, cross-functional in practice. Working remotely.">
   <meta name="author" content="Iain Andrew">
-  <meta name="theme-color" content="#f4c430">
+  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#0c0c0c">
   <meta property="og:type" content="profile">
   <meta property="og:title" content="Iain Andrew — Senior Software Engineer">
   <meta property="og:description" content="Twelve years building web products, most recently at Canva (Pexels). Frontend by trade, cross-functional in practice. Dublin, remote.">
   <link rel="icon" href="data:,">
+  <link rel="preload" href="assets/fonts/InstrumentSerif-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/InstrumentSans-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="styles.css">
+  <script src="credits.js" defer></script>
 </head>
 <body>
 <!--
-  DRAFT. Remaining PLACEHOLDER comments mark copy still to be confirmed or supplied.
-
-  Reading modes: the two radio inputs below drive a CSS-only Short / Long switch.
-  Short hides everything marked class="more"; Long shows it; print always shows it.
+  DRAFT. PLACEHOLDER comments mark copy still to be confirmed or supplied.
 -->
-<input type="radio" name="mode" id="short" checked>
-<input type="radio" name="mode" id="long">
+<div class="grain" aria-hidden="true"></div>
 
-<main class="page">
+<main class="credits">
 
-  <nav class="mode" aria-label="Level of detail">
-    <label for="short">Short</label>
-    <label for="long">Long</label>
-  </nav>
-
-  <header class="masthead">
-    <!-- PLACEHOLDER: swap for a real photo, cut out from its background (square, ~400px). -->
-    <img class="portrait" src="assets/portrait.svg" alt="Portrait of Iain Andrew" width="160" height="160">
-    <div class="identity">
-      <h1>Iain Andrew</h1>
-      <p class="tagline">Senior Software Engineer, most recently at Canva (Pexels)</p>
-      <p class="meta">Dublin, Ireland · Remote</p>
-      <address class="contact">
-        <ul>
-          <li><a href="mailto:iainbruceandrew@gmail.com">iainbruceandrew@gmail.com</a></li>
-          <li><a href="https://www.linkedin.com/in/iaina">linkedin.com/in/iaina</a></li>
-          <li><a href="https://github.com/IainAndrew">github.com/IainAndrew</a></li>
-        </ul>
-      </address>
-      <p class="cv-link"><a href="Iain-Andrew-CV.pdf" download>Download CV (PDF)</a></p>
-    </div>
+  <header class="card title-card" id="top">
+    <!-- PLACEHOLDER: swap for a real photo (square crop, ~400px). -->
+    <img class="portrait" src="assets/portrait.svg" alt="" width="96" height="96">
+    <p class="kicker">Senior Software Engineer</p>
+    <h1>Iain Andrew</h1>
+    <p class="strap">Twelve years building web products, the last five and a half at Canva (Pexels). Frontend by trade, cross-functional in practice; coding agents are central to how I work.</p>
+    <p class="status">Dublin, Ireland · Remote · Available for new roles</p>
+    <p class="roll-control"><button type="button" class="roll" data-roll aria-pressed="false">Roll credits</button><span class="or">or scroll</span></p>
   </header>
 
-  <p class="lede">Twelve years building web products, the last five and a half on Pexels at Canva. Frontend by trade and cross-functional in practice<span class="more">: over the past two years I have shipped backend, mobile and data work as readily as frontend</span>. Since 2025 coding agents have been central to how I work: I plan, decompose and review; they write most of the code; I ship faster, and cleaner, than at any point in my career.</p>
+  <section class="reel reveal" aria-labelledby="experience">
+    <h2 id="experience" class="caption">Experience</h2>
 
-  <section class="section" aria-labelledby="experience">
-    <h2 id="experience">Experience</h2>
-
-    <article class="role">
-      <header class="role-head">
-        <h3><span class="title">Senior Software Engineer</span>, <span class="org">Canva (Pexels)</span></h3>
-        <!-- PLACEHOLDER: confirm the end date once the official leaving date is set. -->
-        <p class="when"><time datetime="2021-04">2021</time> – <time datetime="2026-11">2026</time> · Remote</p>
-      </header>
-      <p class="summary">Pexels is Canva's free stock photo and video platform. I joined as a frontend engineer on the website and became the engineer the team handed its most important work to, across web, backend, mobile and data.</p>
-      <ul class="achievements">
-        <li><b>Led the 2025 programme driving users from Pexels into Canva: a 45% lift in daily click-through from one launch, and sign-ups roughly tripled.</b> <span class="more">The dual Download / Edit in Canva grid button, Canva-branded inline ads rolled out to every user with localised creative in 18 languages, a custom right-click menu, and deep links that open Canva's editor with the asset already in place. Each change shipped as a controlled experiment with guard-rail metrics, and the programme finished the half well ahead of goal.</span></li>
-        <li><b>Scoped, architected and built most of The Level Up, Pexels' first photography course.</b> <span class="more">Enrolment and progress models and API in Rails, episode unlocking, a video player with chapters, resume and localised captions, and two pipelines: one encoding source video for the web, one running Whisper transcription with AI translation into 27 languages. The first project Pexels engineering and marketing ran together.</span></li>
-        <li><b>Made the frontend servers stable: 65% less memory per process and a 71% cut in peak response time during deploys.</b> <span class="more">As a frontend engineer new to Kubernetes, I load-tested and restructured the Next.js server fleet, then designed readiness and pre-warm health checks. Frontend servers went from a recurring cause of outages to stable.</span></li>
-        <li><b>Built the in-house A/B testing framework when Google Optimize was retired.</b> <span class="more">Variant assignment at the edge in Cloudflare Workers with per-variant caching, server-side experiments the old tooling could not run, concurrent experiments and country targeting, and the documentation the team runs experiments from.</span></li>
-        <li><b>Drove the migration to schema-validated analytics events shared by web and mobile.</b> <span class="more">Snowplow and Iglu with a single type-safe schema package; old and new events ran in parallel and every discrepancy was root-caused before cut-over.</span></li>
-        <li><b>Shipped contributor recognition end to end: the Winners Wall and the achievements backend.</b> <span class="more">The Winners Wall, which contributors call a favourite page, and the data model behind profile achievements with schema migrations and production backfills, built on a reusable theming system the next product was built on too.</span></li>
-        <li><b>Made AI tooling a team capability.</b> <span class="more">The March 2025 write-up that opened Pexels' adoption conversation and drew engineers from across Canva, weekly knowledge-sharing sessions, the frontend repo's agent configuration on the open AGENTS.md and SKILL.md standards (since adopted by the other Pexels repos), and coaching the team's designer to his first pull request.</span></li>
-        <li><b>Around 840 merged pull requests across the frontend, backend, mobile and edge codebases.</b> <span class="more">Next.js and React, Rails, React Native and Cloudflare Workers, including running the mobile app's releases.</span></li>
-      </ul>
+    <article class="credit">
+      <p class="label"><time datetime="2021-04">2021</time> – <time datetime="2026-11">2026</time></p>
+      <div class="value">
+        <h3>Senior Software Engineer<span class="org">Canva (Pexels)</span></h3>
+        <p class="one">The engineer the team handed its most important work to, across web, backend, mobile and data.</p>
+        <details class="more">
+          <summary>Eight highlights</summary>
+          <ul>
+            <li>Led delivery of the 2025 programme that moves users from Pexels into Canva: the dual Download / Edit in Canva grid button (a 45% lift in daily click-through from a single launch), Canva-branded inline ads rolled out to every user with localised creative in 18 languages, a custom right-click menu, and deep links that open Canva's editor with the asset already in place. Each change shipped as a controlled experiment with guard-rail metrics; the programme finished the half well ahead of goal and monthly sign-ups to Canva from Pexels roughly tripled.</li>
+            <li>Scoped, architected and built most of The Level Up, Pexels' first photography course: enrolment and progress models and API in Rails, episode unlocking, a video player with chapters, resume and localised captions, and two pipelines, one encoding source video for the web and one running Whisper transcription with AI translation into 27 languages. The first project Pexels engineering and marketing ran together.</li>
+            <li>Took on frontend production reliability as a frontend engineer new to Kubernetes: load-tested and restructured the Next.js server fleet (65% less memory per process), then designed readiness and pre-warm health checks that cut peak response time during deploys by 71%. Frontend servers went from a recurring cause of outages to stable.</li>
+            <li>Built the in-house A/B testing framework when Google Optimize was retired: variant assignment at the edge in Cloudflare Workers with per-variant caching, server-side experiments the old tooling could not run, concurrent experiments and country targeting, and the documentation the team runs experiments from.</li>
+            <li>Drove the migration to schema-validated analytics events (Snowplow and Iglu) with a single type-safe schema package shared by web and mobile, running old and new events in parallel and root-causing every discrepancy before cut-over.</li>
+            <li>Shipped contributor-recognition features end to end: the Winners Wall, which contributors call a favourite page, and the backend data model behind profile achievements, with schema migrations and production backfills, on a reusable theming system the next product was built on.</li>
+            <li>Made AI tooling a team capability: the March 2025 write-up that opened Pexels' adoption conversation and drew engineers from across Canva, weekly knowledge-sharing sessions, the frontend repo's agent configuration on the open AGENTS.md and SKILL.md standards (since adopted by the other Pexels repos), and coaching the team's designer to his first pull request.</li>
+            <li>Around 840 merged pull requests across the frontend (Next.js, React), backend (Rails), mobile (React Native) and edge (Cloudflare Workers) codebases, including running the mobile app's releases.</li>
+          </ul>
+        </details>
+      </div>
     </article>
 
-    <article class="role">
-      <header class="role-head">
-        <h3><span class="title">Lead Front End Engineer</span>, <span class="org">Wia</span></h3>
-        <p class="when"><time datetime="2018-03">2018</time> – <time datetime="2021-03">2021</time> · Dublin</p>
-      </header>
-      <p class="summary">Sole frontend engineer at an Internet of Things startup; built and maintained the platform's Angular app for three years.</p>
-      <ul class="achievements">
-        <li><b>Built a drag-and-drop code editor that let beginners program IoT devices.</b> <span class="more">On Google Blockly, with custom blocks generating Arduino code in real time, compiled and deployed to the device from the browser.</span></li>
-        <li><b>Built the occupancy-analytics product and its floor-plan Space Designer.</b> <span class="more">A real-time and historical dashboard fed by Wia's people-counting sensors, and a tool for uploading floor plans and drawing the zones to measure on a canvas.</span></li>
-      </ul>
+    <article class="credit">
+      <p class="label"><time datetime="2018-03">2018</time> – <time datetime="2021-03">2021</time></p>
+      <div class="value">
+        <h3>Lead Front End Engineer<span class="org">Wia</span></h3>
+        <p class="one">Sole frontend engineer at an Internet of Things startup; built and maintained the platform's Angular app.</p>
+        <details class="more">
+          <summary>Two highlights</summary>
+          <ul>
+            <li>Built a drag-and-drop code editor on Google Blockly that let beginners program IoT devices: custom blocks generating Arduino code in real time, compiled and deployed to the device from the browser.</li>
+            <li>Built the occupancy-analytics product: a real-time and historical dashboard fed by Wia's people-counting sensors, and a Space Designer for uploading floor plans and drawing the zones to measure on a canvas.</li>
+          </ul>
+        </details>
+      </div>
     </article>
 
-    <article class="role">
-      <header class="role-head">
-        <h3><span class="title">Front End Web Developer</span>, <span class="org">USIT</span></h3>
-        <p class="when"><time datetime="2015-04">2015</time> – <time datetime="2018-03">2018</time> · Dublin</p>
-      </header>
-      <p class="summary">In-house frontend developer for Ireland's student travel company, building its public sites, campaign pages and booking journeys.</p>
-      <ul class="achievements">
-        <li><b>Designed and built the page template behind hundreds of adventure-tour packages.</b> <span class="more">With an interactive itinerary map on Mapbox GL and programmatic Vimeo header video.</span></li>
-      </ul>
+    <article class="credit">
+      <p class="label"><time datetime="2015-04">2015</time> – <time datetime="2018-03">2018</time></p>
+      <div class="value">
+        <h3>Front End Web Developer<span class="org">USIT</span></h3>
+        <p class="one">In-house frontend developer for Ireland's student travel company: public sites, campaign pages, booking journeys.</p>
+        <details class="more">
+          <summary>One highlight</summary>
+          <ul>
+            <li>Designed and built the page template behind hundreds of adventure-tour packages, with an interactive itinerary map on Mapbox GL and programmatic Vimeo header video.</li>
+          </ul>
+        </details>
+      </div>
     </article>
 
-    <article class="role">
-      <header class="role-head">
-        <h3><span class="title">Front End Developer &amp; Designer</span>, <span class="org">Freelance</span></h3>
-        <p class="when"><time datetime="2014-03">2014</time> – <time datetime="2015-04">2015</time> · Dublin</p>
-      </header>
-      <p class="summary">Web development and design for a range of clients, after an internship at Plugmedia covering front-end UI, mockups, branding, Joomla and PHP for the agency's own rebrand and site.</p>
+    <article class="credit">
+      <p class="label"><time datetime="2014-03">2014</time> – <time datetime="2015-04">2015</time></p>
+      <div class="value">
+        <h3>Front End Developer &amp; Designer<span class="org">Freelance</span></h3>
+        <p class="one">Web development and design for a range of clients, after an internship at Plugmedia covering UI, mockups, branding, Joomla and PHP.</p>
+      </div>
     </article>
 
-    <article class="role">
-      <header class="role-head">
-        <h3><span class="title">Audio Engineer</span>, <span class="org">Freelance, then Aria Mastering</span></h3>
-        <p class="when"><time datetime="2011-01">2011</time> – <time datetime="2014-03">2014</time> · Dublin</p>
-      </header>
-      <p class="summary">Audio engineer and music producer in Dublin studios during and after college, then ran my own online mastering business.</p>
+    <article class="credit">
+      <p class="label"><time datetime="2011-01">2011</time> – <time datetime="2014-03">2014</time></p>
+      <div class="value">
+        <h3>Audio Engineer<span class="org">Freelance, then Aria Mastering</span></h3>
+        <p class="one">Audio engineer and music producer in Dublin studios, then my own online mastering business.</p>
+      </div>
     </article>
   </section>
 
-  <section class="section prose" aria-labelledby="how-i-work">
-    <h2 id="how-i-work">How I work</h2>
-    <p>AI is central to how I work, not an occasional helper. Cursor is my environment, wired to Jira and GitHub so that planning, coding and review share one context, and I usually have several tasks running in parallel across the arc of a piece of work: picking up and writing tickets, scoping, investigating bugs, pressure-testing ideas, reviewing code, drafting docs. I treat it as a discipline rather than a shortcut: I verify what it produces.</p>
-    <p class="more">In 2026 I took on a lot of backend work in parts of a Rails codebase I had never touched. I used agents to map the code and its conventions, draft first-pass implementations and migrations, and check my approach against how the rest of the codebase already did things. Every output was a draft to verify, and backend engineers reviewed what I shipped. The result was substantial backend features delivered far faster than ramping up cold, to a standard that fit the existing patterns, so the squad was never blocked waiting on a specialist.</p>
-    <p class="more">I have turned those workflows into team infrastructure, the agent configuration our repositories run on, and shipped AI inside the product itself: the transcription-and-translation pipeline behind course captions in 27 languages. I have shipped LLM-backed features on the product side; I have not yet owned the model side, and I would like to.</p>
+  <section class="reel reveal" aria-labelledby="how-i-work">
+    <h2 id="how-i-work" class="caption">How I work</h2>
+
+    <div class="credit">
+      <p class="label">Environment</p>
+      <p class="value">Cursor, wired to Jira and GitHub so planning, coding and review share one context. Several agents running in parallel.</p>
+    </div>
+    <div class="credit">
+      <p class="label">Method</p>
+      <p class="value">I plan, decompose and review. Agents write most of the code. Every output is a draft to verify.</p>
+    </div>
+    <div class="credit">
+      <p class="label">Range</p>
+      <p class="value">Frontend by trade; backend, mobile and data as the work requires. In 2026 I shipped substantial Rails features in a codebase I had never touched, reviewed by the specialists.</p>
+    </div>
+    <div class="credit">
+      <p class="label">Stack</p>
+      <p class="value">TypeScript, React, Next.js, React Native, Rails, Cloudflare Workers, Kubernetes, Snowplow.</p>
+    </div>
+    <div class="credit in-full">
+      <p class="label">In full</p>
+      <div class="value">
+        <details class="more">
+          <summary>Three paragraphs</summary>
+          <p>AI is central to how I work, not an occasional helper. Cursor is my environment, wired to Jira and GitHub so that planning, coding and review share one context, and I usually have several tasks running in parallel across the arc of a piece of work: picking up and writing tickets, scoping, investigating bugs, pressure-testing ideas, reviewing code, drafting docs. I treat it as a discipline rather than a shortcut: I verify what it produces.</p>
+          <p>In 2026 I took on a lot of backend work in parts of a Rails codebase I had never touched. I used agents to map the code and its conventions, draft first-pass implementations and migrations, and check my approach against how the rest of the codebase already did things. Every output was a draft to verify, and backend engineers reviewed what I shipped. The result was substantial backend features delivered far faster than ramping up cold, to a standard that fit the existing patterns, so the squad was never blocked waiting on a specialist.</p>
+          <p>I have turned those workflows into team infrastructure, the agent configuration our repositories run on, and shipped AI inside the product itself: the transcription-and-translation pipeline behind course captions in 27 languages. I have shipped LLM-backed features on the product side; I have not yet owned the model side, and I would like to.</p>
+        </details>
+      </div>
+    </div>
   </section>
 
-  <section class="section prose" aria-labelledby="education">
-    <h2 id="education">Education</h2>
-    <p>Diploma in Sound Engineering &amp; Music Production, Sound Training Centre, Dublin, 2010–2012.</p>
+  <section class="reel reveal" aria-labelledby="education">
+    <h2 id="education" class="caption">Education</h2>
+    <div class="credit">
+      <p class="label"><time datetime="2010">2010</time> – <time datetime="2012">2012</time></p>
+      <p class="value">Diploma in Sound Engineering &amp; Music Production<span class="org">Sound Training Centre, Dublin</span></p>
+    </div>
   </section>
 
-  <section class="section prose" aria-labelledby="about">
-    <h2 id="about">About</h2>
-    <!-- PLACEHOLDER: add the two or three personal sentences we discussed. -->
-    <p>I live in Dublin and work remotely, which I intend to keep doing.</p>
+  <section class="reel reveal" aria-labelledby="about">
+    <h2 id="about" class="caption">About</h2>
+    <div class="credit">
+      <p class="label">Based</p>
+      <p class="value">Dublin, Ireland. Remote, and intending to stay that way.</p>
+    </div>
+    <div class="credit">
+      <p class="label">Before software</p>
+      <p class="value">Sound. Studio engineering and music production, then mastering.</p>
+    </div>
+    <!-- PLACEHOLDER: one or two more lines of personal detail, same shape (label + value). -->
   </section>
 
-  <footer class="colophon">
-    <p>Built with Cursor and Claude. No frameworks, no JavaScript. <a href="https://github.com/IainAndrew/portfolio-2026">Source on GitHub</a>. Updated <time datetime="2026-11">November 2026</time>.</p>
+  <section class="reel reveal" aria-labelledby="contact">
+    <h2 id="contact" class="caption">Contact</h2>
+    <address>
+      <div class="credit">
+        <p class="label">Email</p>
+        <p class="value"><a href="mailto:iainbruceandrew@gmail.com">iainbruceandrew@gmail.com</a></p>
+      </div>
+      <div class="credit">
+        <p class="label">LinkedIn</p>
+        <p class="value"><a href="https://www.linkedin.com/in/iaina">linkedin.com/in/iaina</a></p>
+      </div>
+      <div class="credit">
+        <p class="label">GitHub</p>
+        <p class="value"><a href="https://github.com/IainAndrew">github.com/IainAndrew</a></p>
+      </div>
+      <div class="credit">
+        <p class="label">CV</p>
+        <p class="value"><a href="Iain-Andrew-CV.pdf" download>Download the PDF</a></p>
+      </div>
+    </address>
+  </section>
+
+  <footer class="card end-card reveal">
+    <p class="end">Dublin, 2026</p>
+    <p class="colophon">Built with Cursor and Claude. No frameworks, a few kilobytes of JavaScript. <a href="https://github.com/IainAndrew/portfolio-2026">Source on GitHub</a>.</p>
   </footer>
 
 </main>
