@@ -9,17 +9,6 @@
   var root = document.documentElement;
   root.classList.remove("no-js");
 
-  // Display-face preview: ?display=extreme or ?display=marriage, remembered
-  // for the session so it survives navigation between pages.
-  try {
-    var wanted = new URLSearchParams(location.search).get("display");
-    if (wanted) sessionStorage.setItem("display", wanted);
-    var display = sessionStorage.getItem("display");
-    if (display) root.setAttribute("data-display", display);
-  } catch (e) {
-    /* storage unavailable; the query string alone still works on this page */
-  }
-
   var button = document.querySelector(".js-mode-toggle");
   var text = document.querySelector(".js-mode-toggle-text");
   if (!button) return;

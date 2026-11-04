@@ -9,9 +9,7 @@
 /* Type. Display: Gothic Marriage, with Extreme Gothic as the alternate, both by
    Woodcutter (woodcutter.es). Text: Crimson Pro (OFL).
 
-   To switch the display face for good, change the --display line in :root.
-   To preview the alternate on any page without editing, add ?display=extreme
-   to the URL (main.js sets data-display on <html>). */
+   To switch the display face, change the --display line in :root. */
 
 @font-face {
   font-family: "Gothic Marriage";
@@ -73,14 +71,6 @@
   :root {
     --pad: 2rem;
   }
-}
-
-html[data-display="extreme"] {
-  --display: var(--display-extreme);
-}
-
-html[data-display="marriage"] {
-  --display: var(--display-marriage);
 }
 
 html {
