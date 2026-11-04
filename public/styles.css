@@ -190,8 +190,12 @@ a {
   text-underline-offset: 3px;
 }
 
+a {
+  transition: opacity 120ms ease-in-out;
+}
+
 a:hover {
-  text-decoration-style: wavy;
+  opacity: 0.6;
 }
 
 a:focus-visible,
@@ -301,12 +305,11 @@ button:focus-visible {
 
 .imprint a {
   text-decoration: none;
+  transition: opacity 120ms ease-in-out;
 }
 
 .imprint a:hover {
-  text-decoration: underline wavy;
-  text-decoration-thickness: 1px;
-  text-underline-offset: 3px;
+  opacity: 0.6;
 }
 
 /* Mode toggle */
@@ -477,9 +480,7 @@ hr {
 }
 
 .links a:hover {
-  text-decoration: underline wavy;
-  text-decoration-thickness: 1px;
-  text-underline-offset: 3px;
+  opacity: 0.6;
 }
 
 /* Footer */
@@ -511,7 +512,5 @@ hr {
 }
 
 .footer-links a:hover {
-  text-decoration: underline wavy;
-  text-decoration-thickness: 1px;
-  text-underline-offset: 3px;
+  opacity: 0.6;
 }
