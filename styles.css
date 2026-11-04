@@ -1,6 +1,7 @@
-/* Credits.
-   The page reads like the end credits of a film: a label on the left, a name on
-   the right, very little prose, depth folded behind each entry. One stylesheet,
+/* Title page.
+   The page reads like the title page and contents of a printed book: a label on
+   the left, a name on the right, very little prose, depth folded behind each
+   entry, set in John Fell's 17th-century Oxford types on paper. One stylesheet,
    no build step. Screen rules first, print rules at the end; the print rules also
    produce the PDF (scripts/build-pdf.mjs) and are written for applicant-tracking
    parsers: black on white, standard headings, no letter-spacing, every folded
@@ -32,24 +33,35 @@
   src: url("assets/fonts/Switzer-600.woff2") format("woff2");
 }
 
-/* Yeseva One, by Jovanny Lemonad (OFL). The title treatment: name, role titles, end card. */
+/* IM Fell types, Igino Marini's digitisations of John Fell's 17th-century Oxford
+   punches (OFL). French Canon is the largest cut, for the name; Great Primer the
+   smaller, for role titles and the end card. Both are small-caps fonts. */
 
 @font-face {
-  font-family: "Yeseva One";
+  font-family: "IM Fell French Canon SC";
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url("assets/fonts/YesevaOne-400.woff2") format("woff2");
+  src: url("assets/fonts/IMFellFrenchCanonSC.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "IM Fell Great Primer SC";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/fonts/IMFellGreatPrimerSC.woff2") format("woff2");
 }
 
 :root {
-  --bg: #0c0c0c;
-  --fg: #ececec;
-  --muted: #8f8f8f;
-  --rule: rgba(255, 255, 255, 0.12);
+  --bg: #ede6d6;
+  --fg: #1d1a15;
+  --muted: #6e675b;
+  --rule: rgba(29, 26, 21, 0.16);
   --sans: "Switzer", "Helvetica Neue", Helvetica, Arial, system-ui, sans-serif;
-  --display: "Yeseva One", "Iowan Old Style", Georgia, serif;
-  color-scheme: dark;
+  --display: "IM Fell French Canon SC", "Iowan Old Style", Georgia, serif;
+  --display-small: "IM Fell Great Primer SC", "Iowan Old Style", Georgia, serif;
+  color-scheme: light;
 }
 
 html {
@@ -69,13 +81,14 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Film grain: a static noise overlay, barely there. */
+/* Paper grain: a static noise overlay, barely there, inverted to dark speckle. */
 
 .grain {
   position: fixed;
   inset: 0;
   pointer-events: none;
-  opacity: 0.07;
+  opacity: 0.09;
+  filter: invert(1);
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.6 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   background-size: 160px 160px;
   z-index: 1;
@@ -151,9 +164,9 @@ h1 {
   margin: 0;
   font-family: var(--display);
   font-weight: 400;
-  font-size: clamp(3.25rem, 10vw, 6rem);
+  font-size: clamp(2.75rem, 8.5vw, 5.25rem);
   line-height: 1;
-  letter-spacing: -0.01em;
+  letter-spacing: 0.02em;
 }
 
 .strap {
@@ -207,11 +220,11 @@ h1 {
 
 h3 {
   margin: 0;
-  font-family: var(--display);
-  font-size: 1.5rem;
+  font-family: var(--display-small);
+  font-size: 1.4rem;
   font-weight: 400;
   line-height: 1.2;
-  letter-spacing: 0;
+  letter-spacing: 0.02em;
 }
 
 .org {
@@ -304,9 +317,10 @@ address {
 
 .end {
   margin: 0;
-  font-family: var(--display);
-  font-size: 1.75rem;
+  font-family: var(--display-small);
+  font-size: 1.6rem;
   font-weight: 400;
+  letter-spacing: 0.02em;
   color: var(--fg);
 }
 
