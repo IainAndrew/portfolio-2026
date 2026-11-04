@@ -2,12 +2,8 @@
   "name": "portfolio-2026",
   "private": true,
   "type": "module",
-  "description": "Personal CV site. Static HTML and CSS; the PDF is rendered from the same page.",
+  "description": "Personal site. Static HTML and CSS.",
   "scripts": {
-    "serve": "node scripts/serve.mjs",
-    "pdf": "node scripts/build-pdf.mjs"
-  },
-  "devDependencies": {
-    "playwright-core": "^1.64.1"
+    "serve": "node scripts/serve.mjs"
   }
 }

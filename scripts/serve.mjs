@@ -1,4 +1,4 @@
-// A tiny static server for local preview and for the PDF build. No dependencies.
+// A tiny static server for local preview. No dependencies.
 // Serves the repository root with directory → index.html resolution, which is
 // how GitHub Pages and most hosts treat the /about/ style URLs the site uses.
 //

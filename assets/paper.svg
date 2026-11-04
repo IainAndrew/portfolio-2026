@@ -18,7 +18,7 @@
     <feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.015 0"/>
   </filter>
   <rect width="100%" height="100%" filter="url(#mottle)"/>
-  <rect width="100%" height="100%" filter="url(#flecks)" opacity="1.0"/>
-  <rect width="100%" height="100%" filter="url(#fibres)" opacity="1.0"/>
+  <rect width="100%" height="100%" filter="url(#flecks)" opacity="0.5"/>
+  <rect width="100%" height="100%" filter="url(#fibres)" opacity="0.5"/>
   <rect width="100%" height="100%" filter="url(#grain)"/>
 </svg>

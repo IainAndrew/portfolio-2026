@@ -1,15 +1,10 @@
 /* One narrow column for every page, a contents list with leader dots and Roman
    numerals, paper texture, and a red-on-black dark mode. One stylesheet, no
-   build step.
-
-   The print rules at the end produce the PDF from /cv/ (scripts/build-pdf.mjs)
-   and are written for applicant-tracking parsers: black on white, one column,
-   standard headings, no letter-spacing. */
+   build step. */
 
 /* Type. Display: Gothic Marriage, with Extreme Gothic as the alternate, both by
-   Woodcutter (woodcutter.es). Text: Baskervville (ANRT, OFL), a revival of
-   Baskerville's 1750s type; it has no bold, so the bold weight is Libre
-   Baskerville Bold (OFL) under the same family name.
+   Woodcutter (woodcutter.es). Text: Cormorant Garamond (OFL), variable, with
+   the upright file covering 400–700 and the italic 400–500.
 
    To switch the display face, change the --display line in :root. */
 
@@ -30,27 +25,19 @@
 }
 
 @font-face {
-  font-family: "Baskervville";
+  font-family: "Cormorant Garamond";
   font-style: normal;
-  font-weight: 400;
+  font-weight: 400 700;
   font-display: swap;
-  src: url("/assets/fonts/Baskervville-normal.woff2") format("woff2");
+  src: url("/assets/fonts/CormorantGaramond-normal.woff2") format("woff2");
 }
 
 @font-face {
-  font-family: "Baskervville";
+  font-family: "Cormorant Garamond";
   font-style: italic;
-  font-weight: 400;
+  font-weight: 400 500;
   font-display: swap;
-  src: url("/assets/fonts/Baskervville-italic.woff2") format("woff2");
-}
-
-@font-face {
-  font-family: "Baskervville";
-  font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-  src: url("/assets/fonts/LibreBaskerville-bold.woff2") format("woff2");
+  src: url("/assets/fonts/CormorantGaramond-italic.woff2") format("woff2");
 }
 
 :root {
@@ -64,11 +51,11 @@
   --display-marriage: "Gothic Marriage", "Iowan Old Style", Georgia, serif;
   --display-extreme: "Extreme Gothic", "Iowan Old Style", Georgia, serif;
   --display: var(--display-marriage);
-  --serif: "Baskervville", Baskerville, "Libre Baskerville", Georgia, "Times New Roman", serif;
-  --font-xs: 0.85rem;
-  --font-sm: 1rem;
-  --font-base: 1.2rem;
-  --font-md: 1.5rem;
+  --serif: "Cormorant Garamond", Cormorant, Garamond, "Iowan Old Style", Georgia, serif;
+  --font-xs: 0.95rem;
+  --font-sm: 1.1rem;
+  --font-base: 1.32rem;
+  --font-md: 1.65rem;
   --font-lg: 2.3rem;
   --font-xl: 3rem;
   --font-xxl: 6rem;
@@ -116,8 +103,8 @@ body {
   background-size: 800px 800px;
   font-family: var(--serif);
   font-size: var(--font-base);
-  font-weight: 400;
-  line-height: 1.6;
+  font-weight: 500;
+  line-height: 1.5;
   color: var(--fg);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -197,7 +184,7 @@ strong {
 
 a {
   color: var(--fg);
-  font-weight: 400;
+  font-weight: 600;
   text-decoration: underline;
   text-decoration-thickness: 1px;
   text-underline-offset: 3px;
@@ -523,127 +510,4 @@ hr {
 
 .footer-links a:hover {
   opacity: 0.6;
-}
-
-/* Print and PDF, from /cv/ */
-
-@media print {
-  @page {
-    size: A4;
-    margin: 14mm 17mm 16mm;
-  }
-
-  html {
-    color-scheme: light;
-    font-size: 9.75pt;
-  }
-
-  :root {
-    --bg: #fff;
-    --fg: #000;
-    --light: #999;
-  }
-
-  body,
-  html[data-user-color-scheme="dark"] body {
-    display: block;
-    background: #fff;
-    background-image: none;
-    color: #000;
-    font-weight: 400;
-    line-height: 1.32;
-  }
-
-  .app {
-    width: auto;
-    margin: 0;
-  }
-
-  .header-main,
-  .header-main:not(.home),
-  .cv-head {
-    text-align: left;
-    margin-bottom: 0.9rem;
-  }
-
-  .cv-head h1 {
-    font-family: var(--serif);
-    font-size: 22pt;
-    font-weight: 700;
-    text-transform: none;
-    letter-spacing: 0;
-  }
-
-  .cv-head .meta,
-  .cv-head p {
-    font-size: 10.5pt;
-  }
-
-  h2 {
-    font-size: 12pt;
-    letter-spacing: 0;
-    text-transform: none;
-    border-top: 1px solid #999;
-    padding-top: 0.45rem;
-  }
-
-  h3 {
-    font-size: 11pt;
-    letter-spacing: 0;
-    text-transform: none;
-  }
-
-  .content > * + * {
-    margin-top: 0.4rem;
-  }
-
-  .content h2 {
-    margin-top: 0.75rem;
-  }
-
-  .content h3 {
-    margin-top: 0.65rem;
-    break-after: avoid;
-  }
-
-  .content .meta {
-    margin-top: 0.05rem;
-  }
-
-  .content > p:first-of-type::first-letter {
-    font-size: inherit;
-    font-weight: inherit;
-  }
-
-  .content ul {
-    padding-left: 1rem;
-  }
-
-  .content li + li {
-    margin-top: 0.15rem;
-  }
-
-  .content li {
-    break-inside: avoid;
-  }
-
-  .links li {
-    padding: 0.15em 0;
-    border: 0 !important;
-    font-size: 10.5pt;
-  }
-
-  a {
-    color: inherit;
-    text-decoration: none;
-    font-weight: inherit;
-  }
-
-  .main-footer,
-  .mode-toggle,
-  .version,
-  .chapter,
-  .no-print {
-    display: none !important;
-  }
 }
