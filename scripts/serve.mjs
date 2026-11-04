@@ -55,7 +55,14 @@ export function createServer() {
       });
       createReadStream(file).pipe(res);
     } catch {
-      res.writeHead(404, { "Content-Type": "text/plain; charset=utf-8" }).end("Not found");
+      // Same as production: unknown paths get public/404.html with a 404 status.
+      try {
+        const page = path.join(root, "404.html");
+        res.writeHead(404, { "Content-Type": types[".html"], "Content-Length": statSync(page).size, "Cache-Control": "no-store" });
+        createReadStream(page).pipe(res);
+      } catch {
+        res.writeHead(404, { "Content-Type": "text/plain; charset=utf-8" }).end("Not found");
+      }
     }
   });
 }
