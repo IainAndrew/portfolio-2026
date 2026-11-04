@@ -3,6 +3,8 @@
 {
   "name": "iainandrew",
   "compatibility_date": "2026-11-04",
+  // The site lives at iainandrew.com only; no second URL on workers.dev.
+  "workers_dev": false,
   "assets": {
     // Only public/ is published. notes/, scripts/ and config stay out of the site.
     "directory": "./public",
