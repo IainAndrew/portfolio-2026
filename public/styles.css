@@ -403,9 +403,11 @@ button:focus-visible {
 }
 
 .content > p:first-of-type::first-letter {
+  font-family: var(--display);
   font-size: var(--font-xl);
-  font-weight: 700;
+  font-weight: 400;
   line-height: 1;
+  margin-right: 0.06em;
 }
 
 hr {
