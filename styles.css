@@ -6,38 +6,40 @@
    parsers: black on white, standard headings, no letter-spacing, every folded
    passage shown. */
 
+/* Switzer, by Indian Type Foundry via Fontshare. Three weights, self-hosted. */
+
 @font-face {
-  font-family: "Instrument Serif";
+  font-family: "Switzer";
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url("assets/fonts/InstrumentSerif-normal.woff2") format("woff2");
+  src: url("assets/fonts/Switzer-400.woff2") format("woff2");
 }
 
 @font-face {
-  font-family: "Instrument Serif";
-  font-style: italic;
+  font-family: "Switzer";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/fonts/Switzer-500.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Switzer";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("assets/fonts/Switzer-600.woff2") format("woff2");
+}
+
+/* Yeseva One, by Jovanny Lemonad (OFL). The title treatment: name, role titles, end card. */
+
+@font-face {
+  font-family: "Yeseva One";
+  font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url("assets/fonts/InstrumentSerif-italic.woff2") format("woff2");
-}
-
-@font-face {
-  font-family: "Instrument Sans";
-  font-style: normal;
-  font-weight: 400 700;
-  font-stretch: 75% 100%;
-  font-display: swap;
-  src: url("assets/fonts/InstrumentSans-normal.woff2") format("woff2");
-}
-
-@font-face {
-  font-family: "Instrument Sans";
-  font-style: italic;
-  font-weight: 400 700;
-  font-stretch: 75% 100%;
-  font-display: swap;
-  src: url("assets/fonts/InstrumentSans-italic.woff2") format("woff2");
+  src: url("assets/fonts/YesevaOne-400.woff2") format("woff2");
 }
 
 :root {
@@ -45,8 +47,8 @@
   --fg: #ececec;
   --muted: #8f8f8f;
   --rule: rgba(255, 255, 255, 0.12);
-  --serif: "Instrument Serif", Georgia, "Times New Roman", serif;
-  --sans: "Instrument Sans", system-ui, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
+  --sans: "Switzer", "Helvetica Neue", Helvetica, Arial, system-ui, sans-serif;
+  --display: "Yeseva One", "Iowan Old Style", Georgia, serif;
   color-scheme: dark;
 }
 
@@ -63,6 +65,8 @@ body {
   line-height: 1.5;
   font-kerning: normal;
   text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 /* Film grain: a static noise overlay, barely there. */
@@ -131,27 +135,25 @@ summary:focus-visible {
 .kicker,
 .caption,
 .label,
-.status,
-.end {
+.status {
   font-size: 0.75rem;
   font-weight: 500;
-  font-stretch: 88%;
   text-transform: uppercase;
   letter-spacing: 0.16em;
   color: var(--muted);
 }
 
 .kicker {
-  margin: 0 0 0.9rem;
+  margin: 0 0 1.1rem;
 }
 
 h1 {
   margin: 0;
-  font-family: var(--serif);
+  font-family: var(--display);
   font-weight: 400;
   font-size: clamp(3.25rem, 10vw, 6rem);
-  line-height: 0.95;
-  letter-spacing: -0.015em;
+  line-height: 1;
+  letter-spacing: -0.01em;
 }
 
 .strap {
@@ -205,10 +207,11 @@ h1 {
 
 h3 {
   margin: 0;
-  font-size: 1.25rem;
-  font-weight: 500;
-  line-height: 1.3;
-  letter-spacing: -0.005em;
+  font-family: var(--display);
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: 0;
 }
 
 .org {
@@ -301,13 +304,10 @@ address {
 
 .end {
   margin: 0;
-  font-family: var(--serif);
+  font-family: var(--display);
   font-size: 1.75rem;
   font-weight: 400;
-  text-transform: none;
-  letter-spacing: 0;
   color: var(--fg);
-  font-stretch: 100%;
 }
 
 .colophon {
@@ -438,7 +438,6 @@ address {
   .status {
     text-transform: none;
     letter-spacing: 0;
-    font-stretch: 100%;
     font-size: 10pt;
   }
 
@@ -498,6 +497,8 @@ address {
   }
 
   h3 {
+    font-family: var(--sans);
+    font-weight: 500;
     font-size: 11pt;
   }
 
