@@ -1,0 +1,344 @@
+/* One stylesheet, no build step. Screen rules first, print rules at the end.
+   The print rules also produce the PDF (scripts/build-pdf.mjs), so they are
+   written for applicant-tracking parsers: single column, standard headings,
+   no letter-spacing, contact details in the body. */
+
+:root {
+  --bg: #fbfaf7;
+  --fg: #1d1c1a;
+  --muted: #6f6a62;
+  --rule: #e3dfd6;
+  --accent: #8a3b2a;
+  --accent-underline: rgba(138, 59, 42, 0.4);
+  color-scheme: light dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #161513;
+    --fg: #e7e3db;
+    --muted: #9a948a;
+    --rule: #2c2a26;
+    --accent: #e2a08c;
+    --accent-underline: rgba(226, 160, 140, 0.4);
+  }
+}
+
+html {
+  font-size: 112.5%;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: Charter, "Bitstream Charter", "Sitka Text", Cambria, Georgia, serif;
+  line-height: 1.55;
+  font-kerning: normal;
+  text-rendering: optimizeLegibility;
+}
+
+.page {
+  max-inline-size: 40rem;
+  margin-inline: auto;
+  padding: clamp(2.5rem, 8vw, 5rem) clamp(1.25rem, 5vw, 2rem) 3rem;
+}
+
+/* Links */
+
+a {
+  color: var(--accent);
+  text-decoration-line: underline;
+  text-decoration-thickness: 1px;
+  text-decoration-color: var(--accent-underline);
+  text-underline-offset: 0.15em;
+}
+
+a:hover {
+  text-decoration-color: currentColor;
+}
+
+a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* Masthead */
+
+.masthead {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.portrait {
+  flex: none;
+  width: 112px;
+  height: 112px;
+  border-radius: 6px;
+  object-fit: cover;
+}
+
+.identity {
+  min-inline-size: 0;
+}
+
+h1 {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+}
+
+.tagline {
+  margin: 0.35rem 0 0;
+  font-style: italic;
+}
+
+.meta {
+  margin: 0.15rem 0 0;
+  color: var(--muted);
+}
+
+.contact {
+  font-style: normal;
+  font-size: 0.9375rem;
+}
+
+.contact ul {
+  list-style: none;
+  margin: 0.75rem 0 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 0.6rem;
+}
+
+.contact li + li::before {
+  content: "·";
+  color: var(--muted);
+  margin-right: 0.6rem;
+}
+
+.cv-link {
+  margin: 0.5rem 0 0;
+  font-size: 0.9375rem;
+}
+
+/* Lede */
+
+.lede {
+  margin: 2.5rem 0 0;
+  font-size: 1.0625rem;
+}
+
+/* Sections */
+
+.section {
+  margin-top: 3rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--rule);
+}
+
+h2 {
+  margin: 0;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  color: var(--muted);
+}
+
+.prose p {
+  margin: 1rem 0 0;
+}
+
+/* Experience */
+
+.role {
+  margin-top: 1.5rem;
+}
+
+.role-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.25rem 1.5rem;
+  flex-wrap: wrap;
+}
+
+h3 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+h3 .org {
+  font-weight: 400;
+}
+
+.when {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.9375rem;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.achievements {
+  margin: 0.5rem 0 0;
+  padding-left: 1.15rem;
+}
+
+.achievements li {
+  margin-top: 0.3rem;
+  padding-left: 0.15rem;
+}
+
+.achievements li::marker {
+  color: var(--muted);
+}
+
+/* Footer */
+
+.colophon {
+  margin-top: 3.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--rule);
+  color: var(--muted);
+  font-size: 0.875rem;
+}
+
+.colophon p {
+  margin: 0;
+}
+
+/* Narrow screens */
+
+@media (max-width: 40em) {
+  html {
+    font-size: 106.25%;
+  }
+}
+
+@media (max-width: 30em) {
+  .masthead {
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .portrait {
+    width: 88px;
+    height: 88px;
+  }
+
+  h1 {
+    font-size: 1.75rem;
+  }
+
+  .when {
+    white-space: normal;
+  }
+
+  .contact ul {
+    flex-direction: column;
+    gap: 0.15rem;
+  }
+
+  .contact li + li::before {
+    content: none;
+    margin: 0;
+  }
+}
+
+/* Print and PDF */
+
+@media print {
+  @page {
+    size: A4;
+    margin: 16mm 18mm 18mm;
+  }
+
+  :root {
+    --bg: #fff;
+    --fg: #000;
+    --muted: #444;
+    --rule: #999;
+    --accent: #000;
+    --accent-underline: transparent;
+  }
+
+  html {
+    font-size: 10.5pt;
+  }
+
+  body {
+    line-height: 1.4;
+  }
+
+  .page {
+    max-inline-size: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .portrait,
+  .cv-link,
+  .colophon {
+    display: none;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .masthead {
+    gap: 0;
+  }
+
+  h1,
+  h2,
+  h3 {
+    letter-spacing: 0;
+  }
+
+  h1 {
+    font-size: 20pt;
+  }
+
+  h2 {
+    font-size: 12pt;
+    color: #000;
+    text-transform: none;
+  }
+
+  .lede {
+    margin-top: 1.25rem;
+    font-size: 10.5pt;
+  }
+
+  .section {
+    margin-top: 1.4rem;
+    padding-top: 0.5rem;
+  }
+
+  .role {
+    margin-top: 0.9rem;
+    break-inside: avoid;
+  }
+
+  h2,
+  h3 {
+    break-after: avoid;
+  }
+
+  .prose p {
+    orphans: 3;
+    widows: 3;
+  }
+}
