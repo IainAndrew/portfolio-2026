@@ -294,20 +294,21 @@ button:focus-visible {
   order: 3;
 }
 
-.version {
+.imprint {
   display: block;
   margin-top: 3rem;
   text-align: center;
   font-size: var(--font-sm);
-  font-weight: 700;
+  font-weight: 500;
+  letter-spacing: 0.04em;
 }
 
-.version a {
+.imprint a {
   text-decoration: none;
   transition: opacity 120ms ease-in-out;
 }
 
-.version a:hover {
+.imprint a:hover {
   opacity: 0.6;
 }
 
