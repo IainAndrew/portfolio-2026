@@ -33,24 +33,16 @@
   src: url("assets/fonts/Switzer-600.woff2") format("woff2");
 }
 
-/* IM Fell types, Igino Marini's digitisations of John Fell's 17th-century Oxford
-   punches (OFL). French Canon is the largest cut, for the name; Great Primer the
-   smaller, for role titles and the end card. Both are small-caps fonts. */
+/* Sinistre Bold, by Collletttivo (OFL): a display serif built from the Book of
+   Kells, Celtic stone carving and Elzevir types. The title treatment: name, role
+   titles, end card. Subset to Latin-1 and typographic punctuation. */
 
 @font-face {
-  font-family: "IM Fell French Canon SC";
+  font-family: "Sinistre";
   font-style: normal;
-  font-weight: 400;
+  font-weight: 700;
   font-display: swap;
-  src: url("assets/fonts/IMFellFrenchCanonSC.woff2") format("woff2");
-}
-
-@font-face {
-  font-family: "IM Fell Great Primer SC";
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url("assets/fonts/IMFellGreatPrimerSC.woff2") format("woff2");
+  src: url("assets/fonts/Sinistre-Bold.woff2") format("woff2");
 }
 
 :root {
@@ -59,8 +51,7 @@
   --muted: #6e675b;
   --rule: rgba(29, 26, 21, 0.16);
   --sans: "Switzer", "Helvetica Neue", Helvetica, Arial, system-ui, sans-serif;
-  --display: "IM Fell French Canon SC", "Iowan Old Style", Georgia, serif;
-  --display-small: "IM Fell Great Primer SC", "Iowan Old Style", Georgia, serif;
+  --display: "Sinistre", "Iowan Old Style", Georgia, serif;
   color-scheme: light;
 }
 
@@ -163,10 +154,10 @@ summary:focus-visible {
 h1 {
   margin: 0;
   font-family: var(--display);
-  font-weight: 400;
-  font-size: clamp(2.75rem, 8.5vw, 5.25rem);
+  font-weight: 700;
+  font-size: clamp(3rem, 9.5vw, 5.75rem);
   line-height: 1;
-  letter-spacing: 0.02em;
+  letter-spacing: 0;
 }
 
 .strap {
@@ -220,11 +211,11 @@ h1 {
 
 h3 {
   margin: 0;
-  font-family: var(--display-small);
-  font-size: 1.4rem;
-  font-weight: 400;
+  font-family: var(--display);
+  font-size: 1.45rem;
+  font-weight: 700;
   line-height: 1.2;
-  letter-spacing: 0.02em;
+  letter-spacing: 0;
 }
 
 .org {
@@ -317,10 +308,9 @@ address {
 
 .end {
   margin: 0;
-  font-family: var(--display-small);
+  font-family: var(--display);
   font-size: 1.6rem;
-  font-weight: 400;
-  letter-spacing: 0.02em;
+  font-weight: 700;
   color: var(--fg);
 }
 
