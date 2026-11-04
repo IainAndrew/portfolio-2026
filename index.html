@@ -6,6 +6,7 @@
   <title>Iain Andrew — Senior Software Engineer</title>
   <meta name="description" content="Senior software engineer in Dublin, most recently at Canva (Pexels). Twelve years building web products: frontend by trade, cross-functional in practice. Working remotely.">
   <meta name="author" content="Iain Andrew">
+  <meta name="theme-color" content="#f4c430">
   <meta property="og:type" content="profile">
   <meta property="og:title" content="Iain Andrew — Senior Software Engineer">
   <meta property="og:description" content="Twelve years building web products, most recently at Canva (Pexels). Frontend by trade, cross-functional in practice. Dublin, remote.">
@@ -15,12 +16,23 @@
 <body>
 <!--
   DRAFT. Remaining PLACEHOLDER comments mark copy still to be confirmed or supplied.
+
+  Reading modes: the two radio inputs below drive a CSS-only Short / Long switch.
+  Short hides everything marked class="more"; Long shows it; print always shows it.
 -->
+<input type="radio" name="mode" id="short" checked>
+<input type="radio" name="mode" id="long">
+
 <main class="page">
 
+  <nav class="mode" aria-label="Level of detail">
+    <label for="short">Short</label>
+    <label for="long">Long</label>
+  </nav>
+
   <header class="masthead">
-    <!-- PLACEHOLDER: swap for a real photo (square crop, ~400px). -->
-    <img class="portrait" src="assets/portrait.svg" alt="Portrait of Iain Andrew" width="112" height="112">
+    <!-- PLACEHOLDER: swap for a real photo, cut out from its background (square, ~400px). -->
+    <img class="portrait" src="assets/portrait.svg" alt="Portrait of Iain Andrew" width="160" height="160">
     <div class="identity">
       <h1>Iain Andrew</h1>
       <p class="tagline">Senior Software Engineer, most recently at Canva (Pexels)</p>
@@ -36,7 +48,7 @@
     </div>
   </header>
 
-  <p class="lede">Twelve years building web products, the last five and a half on Pexels at Canva. Frontend by trade and cross-functional in practice: over the past two years I have shipped backend, mobile and data work as readily as frontend. Since early 2025 coding agents have been central to how I work. I plan, decompose and review; they write most of the code. I ship faster, and cleaner, than at any point in my career.</p>
+  <p class="lede">Twelve years building web products, the last five and a half on Pexels at Canva. Frontend by trade and cross-functional in practice<span class="more">: over the past two years I have shipped backend, mobile and data work as readily as frontend</span>. Since 2025 coding agents have been central to how I work: I plan, decompose and review; they write most of the code; I ship faster, and cleaner, than at any point in my career.</p>
 
   <section class="section" aria-labelledby="experience">
     <h2 id="experience">Experience</h2>
@@ -49,14 +61,14 @@
       </header>
       <p class="summary">Pexels is Canva's free stock photo and video platform. I joined as a frontend engineer on the website and became the engineer the team handed its most important work to, across web, backend, mobile and data.</p>
       <ul class="achievements">
-        <li>Led delivery of the 2025 programme that moves users from Pexels into Canva: the dual Download / Edit in Canva grid button (a 45% lift in daily click-through from a single launch), Canva-branded inline ads rolled out to every user with localised creative in 18 languages, a custom right-click menu, and deep links that open Canva's editor with the asset already in place. Each change shipped as a controlled experiment with guard-rail metrics; the programme finished the half well ahead of goal and monthly sign-ups to Canva from Pexels roughly tripled.</li>
-        <li>Scoped, architected and built most of The Level Up, Pexels' first photography course: enrolment and progress models and API in Rails, episode unlocking, a video player with chapters, resume and localised captions, and two pipelines, one encoding source video for the web and one running Whisper transcription with AI translation into 27 languages. The first project Pexels engineering and marketing ran together.</li>
-        <li>Took on frontend production reliability as a frontend engineer new to Kubernetes: load-tested and restructured the Next.js server fleet (65% less memory per process), then designed readiness and pre-warm health checks that cut peak response time during deploys by 71%. Frontend servers went from a recurring cause of outages to stable.</li>
-        <li>Built the in-house A/B testing framework when Google Optimize was retired: variant assignment at the edge in Cloudflare Workers with per-variant caching, server-side experiments the old tooling could not run, concurrent experiments and country targeting, and the documentation the team runs experiments from.</li>
-        <li>Drove the migration to schema-validated analytics events (Snowplow and Iglu) with a single type-safe schema package shared by web and mobile, running old and new events in parallel and root-causing every discrepancy before cut-over.</li>
-        <li>Shipped contributor-recognition features end to end: the Winners Wall, which contributors call a favourite page, and the backend data model behind profile achievements, with schema migrations and production backfills, on a reusable theming system the next product was built on.</li>
-        <li>Made AI tooling a team capability: the March 2025 write-up that opened Pexels' adoption conversation and drew engineers from across Canva, weekly knowledge-sharing sessions, the frontend repo's agent configuration on the open AGENTS.md and SKILL.md standards (since adopted by the other Pexels repos), and coaching the team's designer to his first pull request.</li>
-        <li>Around 840 merged pull requests across the frontend (Next.js, React), backend (Rails), mobile (React Native) and edge (Cloudflare Workers) codebases, including running the mobile app's releases.</li>
+        <li><b>Led the 2025 programme driving users from Pexels into Canva: a 45% lift in daily click-through from one launch, and sign-ups roughly tripled.</b> <span class="more">The dual Download / Edit in Canva grid button, Canva-branded inline ads rolled out to every user with localised creative in 18 languages, a custom right-click menu, and deep links that open Canva's editor with the asset already in place. Each change shipped as a controlled experiment with guard-rail metrics, and the programme finished the half well ahead of goal.</span></li>
+        <li><b>Scoped, architected and built most of The Level Up, Pexels' first photography course.</b> <span class="more">Enrolment and progress models and API in Rails, episode unlocking, a video player with chapters, resume and localised captions, and two pipelines: one encoding source video for the web, one running Whisper transcription with AI translation into 27 languages. The first project Pexels engineering and marketing ran together.</span></li>
+        <li><b>Made the frontend servers stable: 65% less memory per process and a 71% cut in peak response time during deploys.</b> <span class="more">As a frontend engineer new to Kubernetes, I load-tested and restructured the Next.js server fleet, then designed readiness and pre-warm health checks. Frontend servers went from a recurring cause of outages to stable.</span></li>
+        <li><b>Built the in-house A/B testing framework when Google Optimize was retired.</b> <span class="more">Variant assignment at the edge in Cloudflare Workers with per-variant caching, server-side experiments the old tooling could not run, concurrent experiments and country targeting, and the documentation the team runs experiments from.</span></li>
+        <li><b>Drove the migration to schema-validated analytics events shared by web and mobile.</b> <span class="more">Snowplow and Iglu with a single type-safe schema package; old and new events ran in parallel and every discrepancy was root-caused before cut-over.</span></li>
+        <li><b>Shipped contributor recognition end to end: the Winners Wall and the achievements backend.</b> <span class="more">The Winners Wall, which contributors call a favourite page, and the data model behind profile achievements with schema migrations and production backfills, built on a reusable theming system the next product was built on too.</span></li>
+        <li><b>Made AI tooling a team capability.</b> <span class="more">The March 2025 write-up that opened Pexels' adoption conversation and drew engineers from across Canva, weekly knowledge-sharing sessions, the frontend repo's agent configuration on the open AGENTS.md and SKILL.md standards (since adopted by the other Pexels repos), and coaching the team's designer to his first pull request.</span></li>
+        <li><b>Around 840 merged pull requests across the frontend, backend, mobile and edge codebases.</b> <span class="more">Next.js and React, Rails, React Native and Cloudflare Workers, including running the mobile app's releases.</span></li>
       </ul>
     </article>
 
@@ -67,8 +79,8 @@
       </header>
       <p class="summary">Sole frontend engineer at an Internet of Things startup; built and maintained the platform's Angular app for three years.</p>
       <ul class="achievements">
-        <li>Built a drag-and-drop code editor on Google Blockly that let beginners program IoT devices: custom blocks generating Arduino code in real time, compiled and deployed to the device from the browser.</li>
-        <li>Built the occupancy-analytics product: a real-time and historical dashboard fed by Wia's people-counting sensors, and a Space Designer for uploading floor plans and drawing the zones to measure on a canvas.</li>
+        <li><b>Built a drag-and-drop code editor that let beginners program IoT devices.</b> <span class="more">On Google Blockly, with custom blocks generating Arduino code in real time, compiled and deployed to the device from the browser.</span></li>
+        <li><b>Built the occupancy-analytics product and its floor-plan Space Designer.</b> <span class="more">A real-time and historical dashboard fed by Wia's people-counting sensors, and a tool for uploading floor plans and drawing the zones to measure on a canvas.</span></li>
       </ul>
     </article>
 
@@ -79,7 +91,7 @@
       </header>
       <p class="summary">In-house frontend developer for Ireland's student travel company, building its public sites, campaign pages and booking journeys.</p>
       <ul class="achievements">
-        <li>Designed and built the page template behind hundreds of adventure-tour packages, with an interactive itinerary map on Mapbox GL and programmatic Vimeo header video.</li>
+        <li><b>Designed and built the page template behind hundreds of adventure-tour packages.</b> <span class="more">With an interactive itinerary map on Mapbox GL and programmatic Vimeo header video.</span></li>
       </ul>
     </article>
 
@@ -103,8 +115,8 @@
   <section class="section prose" aria-labelledby="how-i-work">
     <h2 id="how-i-work">How I work</h2>
     <p>AI is central to how I work, not an occasional helper. Cursor is my environment, wired to Jira and GitHub so that planning, coding and review share one context, and I usually have several tasks running in parallel across the arc of a piece of work: picking up and writing tickets, scoping, investigating bugs, pressure-testing ideas, reviewing code, drafting docs. I treat it as a discipline rather than a shortcut: I verify what it produces.</p>
-    <p>In 2026 I took on a lot of backend work in parts of a Rails codebase I had never touched. I used agents to map the code and its conventions, draft first-pass implementations and migrations, and check my approach against how the rest of the codebase already did things. Every output was a draft to verify, and backend engineers reviewed what I shipped. The result was substantial backend features delivered far faster than ramping up cold, to a standard that fit the existing patterns, so the squad was never blocked waiting on a specialist.</p>
-    <p>I have turned those workflows into team infrastructure, the agent configuration our repositories run on, and shipped AI inside the product itself: the transcription-and-translation pipeline behind course captions in 27 languages. I have shipped LLM-backed features on the product side; I have not yet owned the model side, and I would like to.</p>
+    <p class="more">In 2026 I took on a lot of backend work in parts of a Rails codebase I had never touched. I used agents to map the code and its conventions, draft first-pass implementations and migrations, and check my approach against how the rest of the codebase already did things. Every output was a draft to verify, and backend engineers reviewed what I shipped. The result was substantial backend features delivered far faster than ramping up cold, to a standard that fit the existing patterns, so the squad was never blocked waiting on a specialist.</p>
+    <p class="more">I have turned those workflows into team infrastructure, the agent configuration our repositories run on, and shipped AI inside the product itself: the transcription-and-translation pipeline behind course captions in 27 languages. I have shipped LLM-backed features on the product side; I have not yet owned the model side, and I would like to.</p>
   </section>
 
   <section class="section prose" aria-labelledby="education">
