@@ -6,14 +6,27 @@
    and are written for applicant-tracking parsers: black on white, one column,
    standard headings, no letter-spacing. */
 
-/* Type: Trickster by Velvetyne (OFL) for display; Crimson Pro (OFL) for text. */
+/* Type. Display: Gothic Marriage, with Extreme Gothic as the alternate, both by
+   Woodcutter (woodcutter.es). Text: Crimson Pro (OFL).
+
+   To switch the display face for good, change the --display line in :root.
+   To preview the alternate on any page without editing, add ?display=extreme
+   to the URL (main.js sets data-display on <html>). */
 
 @font-face {
-  font-family: "Trickster";
+  font-family: "Gothic Marriage";
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url("/assets/fonts/Trickster-Regular.woff2") format("woff2");
+  src: url("/assets/fonts/GothicMarriage.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Extreme Gothic";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/assets/fonts/ExtremeGothic.woff2") format("woff2");
 }
 
 @font-face {
@@ -40,7 +53,9 @@
   --fg: light-dark(var(--black), var(--red));
   --light: light-dark(rgba(0, 0, 0, 0.3), rgba(255, 59, 59, 0.3));
   --focus: light-dark(var(--red), #fff);
-  --display: "Trickster", "Iowan Old Style", Georgia, serif;
+  --display-marriage: "Gothic Marriage", "Iowan Old Style", Georgia, serif;
+  --display-extreme: "Extreme Gothic", "Iowan Old Style", Georgia, serif;
+  --display: var(--display-marriage);
   --serif: "Crimson Pro", "Iowan Old Style", Georgia, "Times New Roman", serif;
   --font-xs: 0.85rem;
   --font-sm: 1rem;
@@ -58,6 +73,14 @@
   :root {
     --pad: 2rem;
   }
+}
+
+html[data-display="extreme"] {
+  --display: var(--display-extreme);
+}
+
+html[data-display="marriage"] {
+  --display: var(--display-marriage);
 }
 
 html {
