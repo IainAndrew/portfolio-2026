@@ -2,5 +2,6 @@ node_modules/
 .DS_Store
 .wrangler/
 
-# Career notes live in the private IainAndrew/portfolio-notes repository, never here.
+# Career notes and the to-do list live in the private IainAndrew/portfolio-notes repository, never here.
 notes/
+TODO.md
