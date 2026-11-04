@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>How I work · Iain Andrew</title>
-  <meta name="description" content="How Iain Andrew works with coding agents across web, backend, mobile, and data.">
+  <meta name="description" content="How Iain Andrew approaches software engineering and uses coding agents to multiply his output.">
   <meta name="author" content="Iain Andrew">
   <meta name="theme-color" content="#e4e2d7" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#111111" media="(prefers-color-scheme: dark)">
@@ -25,19 +25,9 @@
 
   <main>
     <div class="content">
-      <p>My day-to-day workflow is built around coding agents. I work in Cursor, wired up to Jira and GitHub so my tickets, codebase, and pull requests all sit in the same context. Most days I have a few agents running in parallel across whatever needs doing: scoping features, writing or picking up tickets, hunting down bugs, bouncing ideas around, reviewing code, or drafting docs. Agents write most of my code now, which means my job is being strict about how the problem is framed and verifying everything they produce before it ships.</p>
-      <p>Working this way has completely changed what I can take on. In 2026 I picked up a lot of backend work in parts of a Rails codebase I'd never touched before. I used agents to map out the existing code and its conventions, draft initial implementations and database migrations, and double-check my approach against how the rest of the repo worked. I treated the output as a first draft to pull apart and verify, and had backend engineers review my PRs before merging. I ended up shipping substantial backend features in a fraction of the time it would have taken to ramp up cold, in a style that fit right in with the existing codebase, and our squad never had to sit around waiting on a backend specialist.</p>
-      <p>Beyond my own workflow, I built the shared agent configuration that Pexels' repositories run on, and shipped AI features in the product itself, including the transcription and translation pipeline that generates course captions in 27 languages. Everything I've built with LLMs so far has been on the application and tooling side. I haven't worked on the model side yet, and I'd love the chance to.</p>
-
-      <h2>At a glance</h2>
-      <h3>Environment</h3>
-      <p>Cursor connected to Jira and GitHub via MCP, with several agents running in parallel.</p>
-      <h3>Method</h3>
-      <p>I handle the planning, task breakdown, and review. Agents write most of the code; I verify every line before it goes out.</p>
-      <h3>Range</h3>
-      <p>Frontend by background, comfortable working across backend, mobile, infrastructure, and data whenever the project calls for it.</p>
-      <h3>Stack</h3>
-      <p>TypeScript, React, Next.js, React Native, Rails, Cloudflare Workers, Kubernetes, Snowplow.</p>
+      <p>After twelve years of shipping software, the fundamentals I care about are simple: owning projects from start to finish, shipping in small, reversible steps, building reusable foundations instead of one-offs, and instrumenting problems to find the actual root cause.</p>
+      <p>Having those habits in place is what lets me get real leverage from AI. I've built my day-to-day workflow around coding agents, with my codebase, issue tracker, and pull requests connected via MCP and several agents running in parallel. For larger work, I iterate on a detailed spec with the model before any code gets written, and I set up portable repo rules and skills (AGENTS.md, SKILL.md) so agents follow our conventions.</p>
+      <p>Working this way has multiplied my output and made it much faster to jump into unfamiliar parts of the stack. Agents handle most of the implementation and help map new territory, while I focus on the design decisions, catch bad assumptions, and review every line that ships.</p>
     </div>
   </main>
 
