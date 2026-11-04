@@ -1,5 +1,6 @@
 node_modules/
 .DS_Store
+.wrangler/
 
 # Personal notes that must never be published (review quotes, names, flagged items).
 notes/private/

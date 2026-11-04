@@ -1,6 +1,6 @@
 // A tiny static server for local preview. No dependencies.
-// Serves the repository root with directory → index.html resolution, which is
-// how GitHub Pages and most hosts treat the /about/ style URLs the site uses.
+// Serves public/ with directory → index.html resolution, matching how the
+// site is served in production (Cloudflare Workers static assets).
 //
 //   node scripts/serve.mjs          → http://localhost:8000
 //   PORT=3000 node scripts/serve.mjs
@@ -10,7 +10,7 @@ import { createReadStream, statSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
-const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
+const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..", "public");
 
 const types = {
   ".html": "text/html; charset=utf-8",
