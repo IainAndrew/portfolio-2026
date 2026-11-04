@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>How I work · Iain Andrew</title>
+  <meta name="description" content="How Iain Andrew works: coding agents as a discipline, not a shortcut.">
+  <meta name="author" content="Iain Andrew">
+  <meta name="theme-color" content="#e4e2d7" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#111111" media="(prefers-color-scheme: dark)">
+  <link rel="icon" href="data:,">
+  <script>try{var s=localStorage.getItem("user-color-scheme");if(s){document.documentElement.setAttribute("data-user-color-scheme",s)}}catch(e){}</script>
+  <link rel="preload" href="/assets/fonts/Trickster-Regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/CrimsonPro-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/main.js" defer></script>
+</head>
+<body>
+<div class="app">
+
+  <header class="header-main">
+    <p class="chapter">III</p>
+    <h1 id="content">How I work</h1>
+  </header>
+
+  <main>
+    <div class="content">
+      <p>AI is central to how I work, not an occasional helper. Cursor is my environment, wired to Jira and GitHub so that planning, coding and review share one context, and I usually have several tasks running in parallel across the arc of a piece of work: picking up and writing tickets, scoping, investigating bugs, pressure-testing ideas, reviewing code, drafting docs. I treat it as a discipline rather than a shortcut: I verify what it produces.</p>
+      <p>In 2026 I took on a lot of backend work in parts of a Rails codebase I had never touched. I used agents to map the code and its conventions, draft first-pass implementations and migrations, and check my approach against how the rest of the codebase already did things. Every output was a draft to verify, and backend engineers reviewed what I shipped. The result was substantial backend features delivered far faster than ramping up cold, to a standard that fit the existing patterns, so the squad was never blocked waiting on a specialist.</p>
+      <p>I have turned those workflows into team infrastructure, the agent configuration our repositories run on, and shipped AI inside the product itself: the transcription-and-translation pipeline behind course captions in 27 languages. I have shipped LLM-backed features on the product side; I have not yet owned the model side, and I would like to.</p>
+
+      <h2>At a glance</h2>
+      <h3>Environment</h3>
+      <p>Cursor, wired to Jira and GitHub so planning, coding and review share one context. Several agents running in parallel.</p>
+      <h3>Method</h3>
+      <p>I plan, decompose and review. Agents write most of the code. Every output is a draft to verify.</p>
+      <h3>Range</h3>
+      <p>Frontend by trade; backend, mobile and data as the work requires.</p>
+      <h3>Stack</h3>
+      <p>TypeScript, React, Next.js, React Native, Rails, Cloudflare Workers, Kubernetes, Snowplow.</p>
+    </div>
+  </main>
+
+  <footer class="main-footer">
+    <div class="footer-links">
+      <nav aria-label="Elsewhere"><a href="mailto:iainbruceandrew@gmail.com">Email</a><a href="https://github.com/IainAndrew">GitHub</a><a href="https://www.linkedin.com/in/iaina">LinkedIn</a></nav>
+      <nav aria-label="Documents"><a href="/Iain-Andrew-CV.pdf">CV</a></nav>
+    </div>
+    <nav class="main-nav" aria-label="Contents">
+      <ol>
+        <li><a href="/about/">About</a></li>
+        <li><a href="/experience/">Experience</a></li>
+        <li><a href="/how-i-work/">How I work</a></li>
+        <li><a href="/contact/">Contact</a></li>
+        <li><a href="/Iain-Andrew-CV.pdf">CV</a></li>
+      </ol>
+    </nav>
+    <small class="version"><a href="/">v. I</a></small>
+    <div class="mode-toggle">
+      <button type="button" class="toggle-button js-mode-toggle">
+        <span class="toggle-icon" aria-hidden="true">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="none" stroke-width="1.2" stroke-linecap="round">
+            <g class="moon"><path d="M12.6 2.9a7.4 7.4 0 1 0 4.5 12.6A6.2 6.2 0 0 1 12.6 2.9z"/></g>
+            <g class="sun"><circle cx="10" cy="10" r="3.6"/><path d="M10 1.8v2M10 16.2v2M1.8 10h2M16.2 10h2M4.2 4.2l1.4 1.4M14.4 14.4l1.4 1.4M4.2 15.8l1.4-1.4M14.4 5.6l1.4-1.4"/></g>
+          </svg>
+        </span>
+        <span class="visually-hidden js-mode-toggle-text">Switch to dark mode</span>
+      </button>
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>

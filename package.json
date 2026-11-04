@@ -4,6 +4,7 @@
   "type": "module",
   "description": "Personal CV site. Static HTML and CSS; the PDF is rendered from the same page.",
   "scripts": {
+    "serve": "node scripts/serve.mjs",
     "pdf": "node scripts/build-pdf.mjs"
   },
   "devDependencies": {
