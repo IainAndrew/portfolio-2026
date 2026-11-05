@@ -1,5 +1,5 @@
 /* One narrow column for every page, a contents list with leader dots and Roman
-   numerals, paper texture, and a red-on-black dark mode. One stylesheet, no
+   numerals, paper texture, and an ochre-on-black dark mode. One stylesheet, no
    build step. */
 
 /* Type. Display: Gothic Marriage, with Extreme Gothic as the alternate, both by
@@ -36,11 +36,12 @@
 
 :root {
   --beige: #e4e2d7;
-  --red: #ff3b3b;
+  --ochre: #d4a24a;
+  --red: #ff3b3b; /* light-mode focus ring only */
   --black: #111;
   --bg: light-dark(var(--beige), var(--black));
-  --fg: light-dark(var(--black), var(--red));
-  --light: light-dark(rgba(0, 0, 0, 0.3), rgba(255, 59, 59, 0.3));
+  --fg: light-dark(var(--black), var(--ochre));
+  --light: light-dark(rgba(0, 0, 0, 0.3), rgba(212, 162, 74, 0.3));
   --focus: light-dark(var(--red), #fff);
   --display-marriage: "Gothic Marriage", "Iowan Old Style", Georgia, serif;
   --display-extreme: "Extreme Gothic", "Iowan Old Style", Georgia, serif;
