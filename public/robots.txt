@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://iainandrew.com/sitemap.xml
