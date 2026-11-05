@@ -2,13 +2,11 @@
    numerals, paper texture, and an ochre-on-black dark mode. One stylesheet, no
    build step. */
 
-/* Type. Display: Gothic Marriage, with Extreme Gothic as the alternate, both by
-   Woodcutter (woodcutter.es). Text: Day Roman (Apostrophic Labs, 2002, freeware),
-   a digitisation of François Guyot's 16th-century roman. One weight, no italic;
-   the face is declared across the whole weight range so nothing is synthesised,
-   and the text sizes are set for its larger x-height.
-
-   To switch the display face, change the --display line in :root. */
+/* Type. Display: Gothic Marriage by Woodcutter (woodcutter.es). Text: Day Roman
+   (Apostrophic Labs, 2002, freeware), a digitisation of François Guyot's
+   16th-century roman. One weight, no italic; the face is declared across the
+   whole weight range so nothing is synthesised, and the text sizes are set for
+   its larger x-height. */
 
 @font-face {
   font-family: "Gothic Marriage";
@@ -16,14 +14,6 @@
   font-weight: 400;
   font-display: swap;
   src: url("/assets/fonts/GothicMarriage.woff2") format("woff2");
-}
-
-@font-face {
-  font-family: "Extreme Gothic";
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url("/assets/fonts/ExtremeGothic.woff2") format("woff2");
 }
 
 @font-face {
@@ -43,9 +33,7 @@
   --fg: light-dark(var(--black), var(--ochre));
   --light: light-dark(rgba(0, 0, 0, 0.3), rgba(212, 162, 74, 0.3));
   --focus: light-dark(var(--red), #fff);
-  --display-marriage: "Gothic Marriage", "Iowan Old Style", Georgia, serif;
-  --display-extreme: "Extreme Gothic", "Iowan Old Style", Georgia, serif;
-  --display: var(--display-marriage);
+  --display: "Gothic Marriage", "Iowan Old Style", Georgia, serif;
   --serif: "Day Roman", Garamond, "Iowan Old Style", Georgia, serif;
   --font-xs: 0.81rem;
   --font-sm: 0.94rem;
