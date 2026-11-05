@@ -3,8 +3,10 @@
    build step. */
 
 /* Type. Display: Gothic Marriage, with Extreme Gothic as the alternate, both by
-   Woodcutter (woodcutter.es). Text: Cormorant Garamond (OFL), variable, with
-   the upright file covering 400–700 and the italic 400–500.
+   Woodcutter (woodcutter.es). Text: Day Roman (Apostrophic Labs, 2002, freeware),
+   a digitisation of François Guyot's 16th-century roman. One weight, no italic;
+   the face is declared across the whole weight range so nothing is synthesised,
+   and the text sizes are set for its larger x-height.
 
    To switch the display face, change the --display line in :root. */
 
@@ -25,19 +27,11 @@
 }
 
 @font-face {
-  font-family: "Cormorant Garamond";
+  font-family: "Day Roman";
   font-style: normal;
-  font-weight: 400 700;
+  font-weight: 100 900;
   font-display: swap;
-  src: url("/assets/fonts/CormorantGaramond-normal.woff2") format("woff2");
-}
-
-@font-face {
-  font-family: "Cormorant Garamond";
-  font-style: italic;
-  font-weight: 400 500;
-  font-display: swap;
-  src: url("/assets/fonts/CormorantGaramond-italic.woff2") format("woff2");
+  src: url("/assets/fonts/DayRoman.woff2") format("woff2");
 }
 
 :root {
@@ -51,11 +45,11 @@
   --display-marriage: "Gothic Marriage", "Iowan Old Style", Georgia, serif;
   --display-extreme: "Extreme Gothic", "Iowan Old Style", Georgia, serif;
   --display: var(--display-marriage);
-  --serif: "Cormorant Garamond", Cormorant, Garamond, "Iowan Old Style", Georgia, serif;
-  --font-xs: 0.95rem;
-  --font-sm: 1.1rem;
-  --font-base: 1.32rem;
-  --font-md: 1.65rem;
+  --serif: "Day Roman", Garamond, "Iowan Old Style", Georgia, serif;
+  --font-xs: 0.81rem;
+  --font-sm: 0.94rem;
+  --font-base: 1.13rem;
+  --font-md: 1.41rem;
   --font-lg: 2.3rem;
   --font-xl: 3rem;
   --font-xxl: 6rem;
