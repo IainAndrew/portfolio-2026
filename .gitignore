@@ -5,3 +5,6 @@ node_modules/
 # Career notes and the to-do list live in the private IainAndrew/portfolio-notes repository, never here.
 notes/
 TODO.md
+
+# Rendered LinkedIn banners (scripts/images.mjs); uploaded by hand, not part of the site.
+linkedin-cover/

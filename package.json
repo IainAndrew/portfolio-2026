@@ -4,6 +4,7 @@
   "type": "module",
   "description": "Personal site. Static HTML and CSS.",
   "scripts": {
-    "serve": "node scripts/serve.mjs"
+    "serve": "node scripts/serve.mjs",
+    "images": "node scripts/images.mjs"
   }
 }
