@@ -5,8 +5,8 @@
 /* Type. Display: Gothic Marriage by Woodcutter (woodcutter.es). Text: Day Roman
    (Apostrophic Labs, 2002, freeware), a digitisation of François Guyot's
    16th-century roman. One weight, no italic; the face is declared across the
-   whole weight range so nothing is synthesised, and the text sizes are set for
-   its larger x-height. */
+   whole weight range so no bold is synthesised, and the text sizes are set for
+   its larger x-height. The About quotes use the browser's synthesised slant. */
 
 @font-face {
   font-family: "Gothic Marriage";
@@ -14,6 +14,15 @@
   font-weight: 400;
   font-display: swap;
   src: url("/assets/fonts/GothicMarriage.woff2") format("woff2");
+}
+
+/* Same file at a single weight, so <strong> gets a synthesised bold. */
+@font-face {
+  font-family: "Day Roman Strong";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/assets/fonts/DayRoman.woff2") format("woff2");
 }
 
 @font-face {
@@ -420,6 +429,34 @@ hr {
   margin-top: 0;
 }
 
+/* Quotes */
+
+.quote {
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 1em;
+  border-left: 1px solid var(--light);
+}
+
+.quote blockquote {
+  margin: 0;
+  font-style: italic;
+}
+
+.quote figcaption {
+  margin-top: 0.4em;
+  font-size: var(--font-sm);
+}
+
+.quote + .meta {
+  margin-top: 0.8em;
+}
+
+.content strong {
+  font-family: "Day Roman Strong", var(--serif);
+  font-weight: 700;
+}
+
 .meta {
   margin-top: 0.3em;
   font-size: var(--font-sm);
@@ -479,8 +516,8 @@ hr {
   gap: 0.5em 1.5em;
   justify-content: space-between;
   align-items: center;
-  border-top: 2px solid;
-  border-bottom: 2px solid;
+  border-top: 1px solid;
+  border-bottom: 1px solid;
   line-height: 1;
 }
 

@@ -32,8 +32,7 @@ const PAGES = [
   { slug: "home" },
   { slug: "about", chapter: "I", title: "About" },
   { slug: "experience", chapter: "II", title: "Experience" },
-  { slug: "how-i-work", chapter: "III", title: "How I work" },
-  { slug: "contact", chapter: "IV", title: "Contact" },
+  { slug: "contact", chapter: "III", title: "Contact" },
 ];
 
 const repo = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
