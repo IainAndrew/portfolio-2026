@@ -1,0 +1,3 @@
+# Cloudflare static-assets redirects. Short link for the CV.
+/cv /Iain-Andrew-CV.pdf 302
+/cv/ /Iain-Andrew-CV.pdf 302
