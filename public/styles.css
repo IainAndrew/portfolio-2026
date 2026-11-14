@@ -102,6 +102,11 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+::selection {
+  background: var(--ochre);
+  color: var(--black);
+}
+
 @media (prefers-color-scheme: dark) {
   html:not([data-user-color-scheme]) body {
     background-image: url("/assets/paper-dark.svg");
