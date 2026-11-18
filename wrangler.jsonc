@@ -12,5 +12,8 @@
     "html_handling": "auto-trailing-slash",
     // Unknown paths return a 404 with public/404.html once there is one.
     "not_found_handling": "404-page"
-  }
+  },
+  // Non-production branch builds run `wrangler preview`, which requires this
+  // block. Empty is fine: assets and settings above apply to previews too.
+  "previews": {}
 }
