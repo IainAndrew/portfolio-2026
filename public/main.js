@@ -5,12 +5,12 @@
 (function () {
   "use strict";
 
-  var KEY = "user-color-scheme";
+  var KEY = "theme";
   var root = document.documentElement;
   root.classList.remove("no-js");
 
-  var button = document.querySelector(".js-mode-toggle");
-  var text = document.querySelector(".js-mode-toggle-text");
+  var button = document.querySelector(".js-theme-toggle");
+  var text = document.querySelector(".js-theme-toggle-text");
   if (!button) return;
 
   function current() {
