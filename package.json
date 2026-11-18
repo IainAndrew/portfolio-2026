@@ -5,6 +5,8 @@
   "description": "Personal site. Static HTML and CSS.",
   "scripts": {
     "serve": "node scripts/serve.mjs",
+    "dev": "LIVE=1 node scripts/serve.mjs",
+    "check-links": "node scripts/check-links.mjs",
     "images": "node scripts/images.mjs"
   }
 }

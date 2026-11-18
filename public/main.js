@@ -25,7 +25,7 @@
     }
   }
 
-  button.addEventListener("click", function () {
+  function toggle() {
     var next = current() === "dark" ? "light" : "dark";
     root.setAttribute("data-user-color-scheme", next);
     try {
@@ -33,6 +33,27 @@
     } catch (e) {
       /* storage unavailable; the choice lasts for this page only */
     }
+    describe();
+  }
+
+  button.addEventListener("click", toggle);
+
+  // Press "t" anywhere to flip the theme.
+  document.addEventListener("keydown", function (event) {
+    if (event.key === "t") toggle();
+  });
+
+  // Follow the system when it changes, unless the visitor has chosen.
+  var media = window.matchMedia("(prefers-color-scheme: dark)");
+  media.addEventListener("change", function () {
+    root.removeAttribute("data-user-color-scheme");
+    describe();
+  });
+
+  // Keep tabs in sync: a choice made in one tab applies to the others.
+  window.addEventListener("storage", function (event) {
+    if (event.key !== KEY) return;
+    root.setAttribute("data-user-color-scheme", event.newValue);
     describe();
   });
 
